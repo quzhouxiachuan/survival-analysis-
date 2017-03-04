@@ -16,11 +16,11 @@ kmf.survival_function_.plot()
 plt.title('Survival function of political regimes')
 %matplotlib inline
 kmf.plot()
-#male
+#g0 is phenotypes 
 g0 = df.group==0
 T = df[g0]['T']
 C = df[g0]['E']
-#female
+
 g1 = df.group==1
 T2 = df[g1]['T']
 C2 = df[g1]['E']
@@ -38,17 +38,16 @@ T5 = df[g4]['T']
 C5 = df[g4]['E']
 
 ax = plt.subplot(111)
-
-kmf.fit(T, event_observed=C, label=['g0'])
+kmf.fit(T, event_observed=C, label=['phenotype1'])
 kmf.survival_function_.plot(ax=ax)
-kmf.fit(T2, event_observed=C2, label=['g1'])
+kmf.fit(T2, event_observed=C2, label=['phenotype2'])
 kmf.survival_function_.plot(ax=ax)
-kmf.fit(T3, event_observed=C3, label=['g2'])
+kmf.fit(T3, event_observed=C3, label=['phenotype3'])
 kmf.survival_function_.plot(ax=ax)
-kmf.fit(T4, event_observed=C4, label=['g3'])
+kmf.fit(T4, event_observed=C4, label=['phenotype4'])
 kmf.survival_function_.plot(ax=ax)
-kmf.fit(T5, event_observed=C5, label=['g4'])
+kmf.fit(T5, event_observed=C5, label=['phenotype5'])
 kmf.survival_function_.plot(ax=ax)
-plt.title('group difference KM')
+plt.title('Kaplan Meier Survival Curve among Phenotypes')
 kmf2 = plt.gcf()
 ```
