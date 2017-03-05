@@ -2,6 +2,10 @@
 ##construct input for survival analysis 
 
 ```
+df1=pd.read_csv("/home/ydw529/other/phenotype0720/pipeline_runs/HF-only1215/results/NTF_files/patient_ids/HF-only_alpha_1.0_gamma_0.001_0.08_0.07-4.dat_patient_id.csv")
+df2=pd.read_csv("/home/ydw529/other/data_preprocessing/data_csv_process/downloaded/limited_HF_Cohort_Demographics_CASE_1215.csv")
+merge=merge(df1,df2,how='left',left_on='mrd_id',right_on='mrd_t_id')
+
 from lifelines import KaplanMeierFitter
 kmf = KaplanMeierFitter()
 import pandas as pd
