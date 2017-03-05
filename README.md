@@ -8,7 +8,7 @@ df1=pd.read_csv("/home/ydw529/other/phenotype0720/pipeline_runs/HF-only1215/resu
 df1.columns=['group','mrd_id']
 df2=pd.read_csv("/home/ydw529/other/data_preprocessing/data_csv_process/downloaded/limited_HF_Cohort_Demographics_CASE_1215.csv")
 merge=pd.merge(df1,df2,how='left',left_on='mrd_id', right_on='mrd_t_id')
-merge['death_dts'].fillna('2016-11-24')
+merge['death_dts'].fillna('2016-11-24'，inplace=True)
 merge['days_diff']=pd.to_datetime(merge['death_dts'])-pd.to_datetime(merge['HF_index_date'])
 merge['death_index_flg'].fillna(0,inplace=True)
 merge['days_diff']=merge['days_diff'].dt.days
