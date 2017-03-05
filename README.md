@@ -1,5 +1,5 @@
 # survival-analysis
-##construct input for survival analysis 
+###construct input for survival analysis, get the number of days from HF index date to death date.
 
 ```
 import pandas as pd
