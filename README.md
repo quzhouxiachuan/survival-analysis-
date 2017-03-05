@@ -64,3 +64,9 @@ kmf.survival_function_.plot(ax=ax)
 plt.title('Kaplan Meier Survival Curve among Phenotypes')
 kmf2 = plt.gcf()
 ```
+
+###logrank test
+```
+from lifelines.statistics import logrank_test
+summary_= logrank_test(T, T2, C, C2, alpha=99)
+```
