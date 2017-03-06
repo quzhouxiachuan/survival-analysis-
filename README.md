@@ -76,5 +76,7 @@ kmf2 = plt.gcf()
 ###logrank test
 ```
 from lifelines.statistics import logrank_test
-summary_= logrank_test(T, T2, C, C2, alpha=99)
+summary_= logrank_test(T, T2, C, C2, alpha=0.95)
 ```
+###result
+when using 7 phenotypes, phenotype1 and phenotype 5 have significant difference. 
