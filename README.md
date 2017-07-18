@@ -7,7 +7,7 @@ import numpy as np
 df1=pd.read_csv("/home/ydw529/other/phenotype0720/pipeline_runs/HF-only1215/results/NTF_files/patient_ids/HF-only_alpha_1.0_gamma_0.001_0.08_0.07-4.dat_patient_id.csv",header=None)
 df1.columns=['group','mrd_id']
 df2=pd.read_csv("/home/ydw529/other/data_preprocessing/data_csv_process/downloaded/limited_HF_Cohort_Demographics_CASE_1215.csv")
-merge=pd.merge(df1,df2,how='left',left_on='mrd_id', right_on='mrd_t_id')
+merge=pd.merge(df1,df2,how='left',left_on='mrd_pt_id', right_on='mrd_pt_id')
 merge['death_dts'].fillna('2016-11-24',inplace=True)
 merge['days_diff']=pd.to_datetime(merge['death_dts'])-pd.to_datetime(merge['HF_index_date'])
 merge['death_index_flg'].fillna(0,inplace=True)
